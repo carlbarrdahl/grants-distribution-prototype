@@ -34,6 +34,7 @@ export default function Home() {
   const totalAmount = form.watch("amount") ?? 0;
   const distributionMethod = form.watch("distribution");
 
+  console.log({ distributionMethod });
   const distribution = distributionCalculations[distributionMethod](
     totalAmount,
     Object.values(selected).filter(Boolean).length,
@@ -114,7 +115,7 @@ export default function Home() {
                         <Input
                           className=""
                           name={`allocation.${id}`}
-                          defaultValue={amount}
+                          value={amount}
                         />
                       </td>
                     </tr>
